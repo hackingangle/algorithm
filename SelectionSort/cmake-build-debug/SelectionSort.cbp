@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/hackingangle/github/algorithm/SelectionSort/Student.h">
+			<Option target="SelectionSort"/>
+		</Unit>
 		<Unit filename="/Users/hackingangle/github/algorithm/SelectionSort/main.cpp">
 			<Option target="SelectionSort"/>
 		</Unit>

@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
+/Users/hackingangle/github/algorithm/SelectionSort/Student.h
+iostream
+-
+
 /Users/hackingangle/github/algorithm/SelectionSort/main.cpp
 iostream
 -
+Student.h
+/Users/hackingangle/github/algorithm/SelectionSort/Student.h
 

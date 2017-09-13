@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Student.h"
 
 /**
  * 选择排序
@@ -45,5 +46,9 @@ int main() {
     std::string willSortString[5] = {"f", "e", "d", "b", "a"};
     selectionSort(willSortString, 5);
     printArr(willSortString, 5);
+
+    Student students[5] = {{"A", 10}, {"C", 98}, {"B", 98}, {"D", 93}, {"E",83}};
+    selectionSort(students, 5);
+    printArr(students, 5);
     return 0;
 }
