@@ -1,7 +1,8 @@
-# algorithm
-Algorithm written by c language.
+# Algorithm
+
+Algorithm written by c language, To be a better soft engineer.
 
 1. bubble sort
-
-    冒泡排序,时间复杂度:O(N²)
-
+    - O(n^2)
+1. selection sort
+    - O(n^2)
