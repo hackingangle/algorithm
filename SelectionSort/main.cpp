@@ -6,7 +6,8 @@
  * @param willSortArr
  * @param len
  */
-void selectionSort(int willSortArr[], int len)
+template <typename T>
+void selectionSort(T willSortArr[], int len)
 {
     for (int i = 0; i < len; i++) {
         int minPosition = i;
@@ -24,7 +25,8 @@ void selectionSort(int willSortArr[], int len)
  * @param willPrintArr
  * @param len
  */
-void printArr(int willPrintArr[], int len) {
+template <typename T>
+void printArr(T willPrintArr[], int len) {
     for (int i = 0; i < len; i++) {
         std::cout << willPrintArr[i] << " ";
     }
@@ -35,5 +37,13 @@ int main() {
     int willSortNums[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
     selectionSort(willSortNums, 10);
     printArr(willSortNums, 10);
+
+    float willSortFloatNums[10] = {10.1, 9.9, 8.8, 7.7, 6.6, 5.5, 4.4, 3.3, 2.2, 1.1};
+    selectionSort(willSortFloatNums, 10);
+    printArr(willSortFloatNums, 10);
+
+    std::string willSortString[5] = {"f", "e", "d", "b", "a"};
+    selectionSort(willSortString, 5);
+    printArr(willSortString, 5);
     return 0;
 }
