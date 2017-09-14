@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Student.h"
+#include "SortTestHelper.h"
 
 /**
  * 选择排序
@@ -21,34 +22,25 @@ void selectionSort(T willSortArr[], int len)
     }
 }
 
-/**
- * 输出
- * @param willPrintArr
- * @param len
- */
-template <typename T>
-void printArr(T willPrintArr[], int len) {
-    for (int i = 0; i < len; i++) {
-        std::cout << willPrintArr[i] << " ";
-    }
-    std::cout << std::endl;
-}
-
 int main() {
     int willSortNums[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
     selectionSort(willSortNums, 10);
-    printArr(willSortNums, 10);
+    SortTestHelper::printArr(willSortNums, 10);
 
     float willSortFloatNums[10] = {10.1, 9.9, 8.8, 7.7, 6.6, 5.5, 4.4, 3.3, 2.2, 1.1};
     selectionSort(willSortFloatNums, 10);
-    printArr(willSortFloatNums, 10);
+    SortTestHelper::printArr(willSortFloatNums, 10);
 
     std::string willSortString[5] = {"f", "e", "d", "b", "a"};
     selectionSort(willSortString, 5);
-    printArr(willSortString, 5);
+    SortTestHelper::printArr(willSortString, 5);
 
     Student students[5] = {{"A", 10}, {"C", 98}, {"B", 98}, {"D", 93}, {"E",83}};
     selectionSort(students, 5);
-    printArr(students, 5);
+    SortTestHelper::printArr(students, 5);
+
+    // random 1000 int numbers
+    int* intHugeArray = SortTestHelper::generateRandomArray(1000, 0, 1000);
+    SortTestHelper::printArr(intHugeArray, 1000);
     return 0;
 }
