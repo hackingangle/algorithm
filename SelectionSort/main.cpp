@@ -40,7 +40,16 @@ int main() {
     SortTestHelper::printArr(students, 5);
 
     // random 1000 int numbers
-    int* intHugeArray = SortTestHelper::generateRandomArray(1000, 0, 1000);
-    SortTestHelper::printArr(intHugeArray, 1000);
+    // 10000 = 0.12s
+    // 100000 = 12s
+    // 10 tons O(n^2) 100 tons
+    // so time = 0.12s * 100 = 12s
+    int intHugeArrayLen = 100000;
+    int* intHugeArray = SortTestHelper::generateRandomArray(intHugeArrayLen, 0, intHugeArrayLen);
+    SortTestHelper::printArr(intHugeArray, intHugeArrayLen);
+    SortTestHelper::testSort("selection sort", intHugeArray, intHugeArrayLen, selectionSort);
+    SortTestHelper::printArr(intHugeArray, intHugeArrayLen);
+
+    delete[] intHugeArray;
     return 0;
 }
