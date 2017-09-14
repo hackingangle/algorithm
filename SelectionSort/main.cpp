@@ -22,6 +22,19 @@ void selectionSort(T willSortArr[], int len)
     }
 }
 
+template <typename T>
+void insertionSort(T willSortArray, int len) {
+    for (int i = 0; i < len; i++) {
+        for (int j = i + 1; j > 0 ; j--) {
+            if (willSortArray[j] < willSortArray[j-1]) {
+                std::swap(willSortArray[j], willSortArray[j-1]);
+            } else {
+                break;
+            }
+        }
+    }
+}
+
 int main() {
     int willSortNums[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
     selectionSort(willSortNums, 10);
@@ -46,10 +59,10 @@ int main() {
     // so time = 0.12s * 100 = 12s
     int intHugeArrayLen = 100000;
     int* intHugeArray = SortTestHelper::generateRandomArray(intHugeArrayLen, 0, intHugeArrayLen);
-    SortTestHelper::printArr(intHugeArray, intHugeArrayLen);
+    int* intHugeArrayForInsertionSort = SortTestHelper::copyIntArray(intHugeArray, intHugeArrayLen);
     SortTestHelper::testSort("selection sort", intHugeArray, intHugeArrayLen, selectionSort);
-    SortTestHelper::printArr(intHugeArray, intHugeArrayLen);
-
+    SortTestHelper::testSort("insertion sort", intHugeArrayForInsertionSort, intHugeArrayLen, insertionSort);
     delete[] intHugeArray;
+    delete[] intHugeArrayForInsertionSort;
     return 0;
 }

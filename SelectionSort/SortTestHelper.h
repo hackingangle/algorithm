@@ -38,6 +38,13 @@ namespace SortTestHelper {
         return ret;
     }
 
+    /**
+     * is sort for assert
+     * @tparam T
+     * @param willCheckArray
+     * @param len
+     * @return
+     */
     template<typename T>
     bool isSorted(T willCheckArray, int len) {
         for (int i = 0; i < len - 1; i++) {
@@ -48,6 +55,16 @@ namespace SortTestHelper {
         return true;
     }
 
+    /**
+     * test sort
+     * 1, assert is sorted
+     * 1, time cost
+     * @tparam T
+     * @param sortName
+     * @param willSortArray
+     * @param len
+     * @param sort
+     */
     template<typename T>
     void testSort(std::string sortName, T willSortArray[], int len, void (*sort)(T[], int)) {
         clock_t startTime = clock();
@@ -55,6 +72,19 @@ namespace SortTestHelper {
         clock_t endTime = clock();
         assert(isSorted(willSortArray, len));
         std::cout << sortName << ":" << double(endTime - startTime) / CLOCKS_PER_SEC << " s" << std::endl;
+    }
+
+    /**
+     * copy int array
+     * not T as: class deep copy knowledge is too heavy
+     * @param fromArray
+     * @param len
+     * @return
+     */
+    int* copyIntArray(int fromArray[], int len) {
+        int* ret = new int[len];
+        std::copy(fromArray, fromArray+len, ret);
+        return ret;
     }
 }
 #endif //SELECTIONSORT_SORTTESTHELPER_H
